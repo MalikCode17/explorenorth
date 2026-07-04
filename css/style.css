@@ -1,0 +1,927 @@
+/* === CSS RESET & VARIABEL === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #fdfcf4;
+    /* Warna dasar cream pucat yang hangat */
+    color: #111827;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* === HEADER & NAVIGASI === */
+header {
+    /* Gradien laut/danau gelap yang elegan bernuansa alam */
+    background: linear-gradient(135deg, rgba(15, 32, 39, 0.95) 0%, rgba(32, 58, 67, 0.95) 50%, rgba(44, 83, 100, 0.95) 100%);
+    backdrop-filter: blur(10px);
+    /* Efek blur modern pada header */
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.logo h1 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    line-height: 1.2;
+    color: #ffffff;
+    /* Teks logo diubah ke putih agar kontras dengan background gelap */
+    letter-spacing: 0.5px;
+}
+
+/* Checkbox Hack untuk Mobile Menu */
+.nav-toggle {
+    display: none;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: #ffffff;
+    /* Ikon hamburger diubah ke putih */
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 35px;
+    align-items: center;
+}
+
+.nav-menu li a {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #e2e8f0;
+    /* Teks menu abu-abu sangat terang */
+    transition: color 0.3s, transform 0.3s;
+    position: relative;
+}
+
+/* Efek garis bawah animasi saat kursor diarahkan (Hover effect) */
+.nav-menu li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: #f97316;
+    transition: width 0.3s ease;
+}
+
+.nav-menu li a:hover::after,
+.nav-menu li a.active::after {
+    width: 100%;
+}
+
+.nav-menu li a:hover,
+.nav-menu li a.active {
+    color: #f97316;
+}
+
+/* === HERO SECTION & ANIMASI === */
+.hero {
+    /* Gradien overlay dari gelap ke oranye agar gambar lebih dramatis & modern */
+    background: linear-gradient(to bottom, rgba(72, 101, 163, 0.75) 0%, rgba(249, 115, 22, 0.4) 100%), url('/images/Destinasi-Sumatera-Utara.png') center/cover no-repeat;
+    color: #ffffff;
+    text-align: center;
+    padding: 140px 20px;
+    position: relative;
+}
+
+/* Aturan Keyframes Animasi dari Kiri ke Kanan */
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-60px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.hero h2 {
+    font-size: 3rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    max-width: 900px;
+    margin: 0 auto 20px auto;
+    line-height: 1.2;
+    letter-spacing: 1px;
+
+    /* Pemanggilan Animasi */
+    animation: slideInLeft 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+
+    /* Efek Gradien Teks Modern */
+    background: linear-gradient(45deg, #ffffff 30%, #ffdcb3 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.1);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 35px;
+    opacity: 0.9;
+    font-weight: 300;
+}
+
+.btn-primary {
+    display: inline-block;
+    background: linear-gradient(45deg, #f97316, #ea580c);
+    color: #ffffff;
+    padding: 14px 35px;
+    border-radius: 50px;
+    /* Bentuk tombol modern membulat */
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 10px 20px rgba(249, 115, 22, 0.3);
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 25px rgba(249, 115, 22, 0.4);
+    background: linear-gradient(45deg, #ea580c, #c2410c);
+}
+
+/* === SECTION GLOBAL === */
+.section-title {
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin: 80px 0 50px 0;
+    color: #111827;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: #f97316;
+    margin: 15px auto 0 auto;
+    border-radius: 2px;
+}
+
+/* === DESTINASI PILIHAN (GRID 3 KOLOM) === */
+.destinasi-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 35px;
+    margin-bottom: 80px;
+}
+
+.card {
+    background: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.04);
+    /* Soft shadow ala Neo-minimalism */
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 45px rgba(249, 115, 22, 0.08);
+    /* Pancaran glow oranye tipis saat disentuh */
+}
+
+.card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.card:hover img {
+    transform: scale(1.05);
+    /* Efek zoom halus pada gambar */
+}
+
+.card-content {
+    padding: 25px;
+    position: relative;
+    background: #ffffff;
+    /* Memastikan latar putih menutupi bagian bawah zoom gambar */
+    z-index: 1;
+}
+
+.card-content h3 {
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+    color: #111827;
+    font-weight: 700;
+}
+
+.card-content p {
+    font-size: 0.95rem;
+    color: #6b7280;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.card-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #f97316;
+    text-transform: uppercase;
+    transition: gap 0.3s ease;
+}
+
+.card-link:hover {
+    gap: 10px;
+    /* Tanda panah bergeser menjauh sedikit */
+    color: #ea580c;
+}
+
+/* === KEKAYAAN BUDAYA === */
+.budaya-container {
+    background: linear-gradient(145deg, #ffffff, #fafafa);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.03);
+    margin-bottom: 80px;
+}
+
+.budaya-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.budaya-item {
+    transition: transform 0.3s ease;
+}
+
+.budaya-item:hover {
+    transform: translateY(-5px);
+}
+
+.budaya-item img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.06);
+}
+
+.budaya-right {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+.budaya-right img {
+    height: 200px;
+}
+
+.budaya-text h3 {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+.budaya-text p {
+    font-size: 0.9rem;
+    color: #6b7280;
+}
+
+/* === CITA RASA KULINER === */
+.kuliner-section {
+    background: linear-gradient(135deg, #ffffff 0%, #f5f4eb 100%);
+    /* Gradien latar belakang modern */
+    padding: 60px 0 80px 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.kuliner-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.kuliner-card {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    height: 280px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    transition: transform 0.4s ease;
+}
+
+.kuliner-card:hover {
+    transform: translateY(-8px) scale(1.02);
+}
+
+.kuliner-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.kuliner-label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 20px 20px 20px;
+    background: linear-gradient(to bottom, transparent 0%, rgba(17, 24, 39, 0.9) 100%);
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 1.15rem;
+    letter-spacing: 0.5px;
+}
+
+.footer-ornament img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    opacity: 0.85;
+    /* Sedikit diterangkan agar gambarnya jelas */
+
+    /* Memotong tepi gambar dengan bentuk lengkungan di bagian atas */
+    clip-path: ellipse(150% 100% at 50% 120%);
+}
+
+/* === FOOTER === */
+footer {
+    background-color: #111827;
+    /* Tampilan kontras gelap elegan di footer */
+    color: #ffffff;
+    padding: 60px 20px 40px 20px;
+    text-align: center;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.social-circle {
+    width: 45px;
+    height: 45px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.social-circle:hover {
+    background-color: #f97316;
+    transform: translateY(-3px);
+}
+
+.footer-text {
+    font-size: 0.9rem;
+    color: #9ca3af;
+    line-height: 1.8;
+}
+
+/* === MEDIA QUERIES (RESPONSIVE) === */
+@media (max-width: 992px) {
+    .destinasi-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .kuliner-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .budaya-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 100px 20px;
+    }
+
+    .hero h2 {
+        font-size: 2.2rem;
+    }
+
+    /* === MEDIA QUERIES FOOTER === */
+    @media (max-width: 768px) {
+        /*... kode HP Anda yang lain... */
+
+        /* Penyesuaian ornamen di HP agar tidak terlalu tinggi */
+        .footer-ornament img {
+            height: 100px;
+        }
+    }
+
+    /* === PERBAIKAN LOGIKA HAMBURGER MENU === */
+    .navbar {
+        flex-wrap: wrap;
+        /* Memungkinkan menu turun ke baris baru */
+    }
+
+    .hamburger {
+        display: flex;
+        margin-left: auto;
+        /* Memaksa ikon menepi ke sudut kanan */
+        position: relative;
+        z-index: 99;
+        /* Selalu di depan agar bisa diklik */
+    }
+
+    /* Membungkus blok nav untuk turun ke bawah */
+    nav {
+        width: 100%;
+        order: 3;
+    }
+
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        /* Gradien selaras untuk menu mobile */
+        background: linear-gradient(135deg, rgba(32, 58, 67, 0.98) 0%, rgba(44, 83, 100, 0.98) 100%);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        margin-top: 15px;
+        padding: 10px 0;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        gap: 0;
+    }
+
+    .nav-menu li {
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        /* Garis pemisah transparan */
+    }
+
+    .nav-menu li:last-child {
+        border-bottom: none;
+    }
+
+    .nav-menu li a {
+        display: block;
+        padding: 15px 0;
+    }
+
+    /* Eksekusi memunculkan menu (Ingat ada spasi sesudah tanda tilde ~) */
+    .nav-toggle:checked~nav .nav-menu {
+        display: flex;
+    }
+
+    /* Penyesuaian grid menjadi tunggal untuk layar ponsel */
+    .destinasi-grid,
+    .kuliner-grid,
+    .budaya-right {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ========================================================
+   CSS KHUSUS EVENT & PANDUAN 
+======================================================== */
+
+.wisata-sumut-section {
+    padding: 60px 5%;
+    background-color: #ffffff;
+    clear: both;
+    /* Mencegah elemen lain naik ke atas */
+    font-family: sans-serif;
+}
+
+/* Latar belakang beda untuk panduan agar ada pemisah visual */
+.wisata-sumut-section.bg-abu {
+    background-color: #f8fafc;
+}
+
+/* Judul Bagian */
+.wisata-sumut-section .wisata-title {
+    text-align: center;
+    font-size: 28px;
+    color: #1e293b;
+    margin-bottom: 40px;
+    font-weight: bold;
+    position: relative;
+}
+
+/* Garis bawah estetik pada judul */
+.wisata-sumut-section .wisata-title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background-color: #059669;
+    /* Warna hijau alam */
+    margin: 12px auto 0;
+    border-radius: 2px;
+}
+
+/* Layout Grid Otomatis (Sangat rapi di PC maupun HP) */
+.wisata-sumut-section .wisata-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    align-items: stretch;
+}
+
+/* Desain Kartu */
+.wisata-sumut-section .wisata-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efek saat mouse diarahkan ke kartu (Hover) */
+.wisata-sumut-section .wisata-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Teks dalam kartu */
+.wisata-sumut-section .wisata-card h3 {
+    color: #0f172a;
+    font-size: 20px;
+    margin-top: 0;
+    margin-bottom: 12px;
+}
+
+.wisata-sumut-section .wisata-card p {
+    color: #475569;
+    font-size: 15px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Garis aksen warna untuk membedakan Event dan Panduan */
+.wisata-sumut-section .event-card {
+    border-top: 5px solid #f59e0b;
+    /* Aksen Kuning/Oranye khas festival */
+}
+
+.wisata-sumut-section .guide-card {
+    border-top: 5px solid #3b82f6;
+    /* Aksen Biru untuk informasi/panduan */
+}
+
+
+/* ========================================================
+   MEDIA QUERY UNTUK RESPONSIVITAS (HP & TABLET)
+======================================================== */
+/* Pengaturan untuk Tablet dan HP layar besar (Maksimal lebar 768px) */
+@media screen and (max-width: 768px) {
+    .wisata-sumut-section {
+        padding: 40px 5%;
+    }
+
+    /* Mengecilkan ukuran judul section */
+    .wisata-sumut-section .wisata-title {
+        font-size: 24px;
+        margin-bottom: 30px;
+    }
+
+    /* Mengecilkan ukuran teks judul di dalam kartu */
+    .wisata-sumut-section .wisata-card h3 {
+        font-size: 18px;
+    }
+
+    /* Mengecilkan ukuran teks deskripsi di dalam kartu */
+    .wisata-sumut-section .wisata-card p {
+        font-size: 14px;
+    }
+}
+
+/* Pengaturan khusus untuk HP layar kecil (Maksimal lebar 480px) */
+@media screen and (max-width: 480px) {
+    .wisata-sumut-section .wisata-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        /* Mengurangi jarak antar kartu */
+    }
+
+    /* Mengurangi jarak dalam (padding) kartu agar tidak memakan banyak tempat */
+    .wisata-sumut-section .wisata-card {
+        padding: 20px 15px;
+    }
+}
+
+/* ========================================================
+   CSS FORM BOOKING (booking.html)
+======================================================== */
+.form-section {
+    background-color: transparent;
+}
+
+.form-wrapper {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    max-width: 800px;
+    margin: 0 auto;
+    border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #1f2937;
+    font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #374151;
+    background-color: #f9fafb;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #f97316;
+    box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.1);
+    background-color: #ffffff;
+}
+
+.btn-submit {
+    width: 100%;
+    margin-top: 15px;
+    font-size: 1.1rem;
+    padding: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Notifikasi */
+.notification {
+    display: none;
+    background-color: #10b981;
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 600;
+    box-shadow: 0 4px 6px rgba(16, 185, 129, 0.2);
+}
+
+/* ========================================================
+   CSS TABEL RIWAYAT (riwayat.html)
+======================================================== */
+.table-section {
+    background-color: transparent;
+}
+
+.table-wrapper {
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    overflow-x: auto; /* Scroll horizontal di HP */
+    padding: 20px;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 800px;
+}
+
+.data-table th,
+.data-table td {
+    padding: 15px 12px;
+    text-align: left;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.data-table th {
+    background-color: #f8fafc;
+    font-weight: 700;
+    color: #111827;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+}
+
+.data-table tbody tr {
+    transition: background-color 0.2s ease;
+}
+
+.data-table tbody tr:hover {
+    background-color: #f1f5f9;
+}
+
+.data-table td {
+    font-size: 0.95rem;
+    color: #4b5563;
+}
+
+.btn-action {
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s ease;
+    display: inline-block;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    color: #fff;
+}
+
+.btn-edit {
+    background-color: #3b82f6;
+}
+
+.btn-edit:hover {
+    background-color: #2563eb;
+    box-shadow: 0 4px 6px rgba(59, 130, 246, 0.2);
+}
+
+.btn-delete {
+    background-color: #ef4444;
+}
+
+.btn-delete:hover {
+    background-color: #dc2626;
+    box-shadow: 0 4px 6px rgba(239, 68, 68, 0.2);
+}
+
+/* ========================================================
+   CSS CUSTOM MODAL (ALERTS & CONFIRMS)
+======================================================== */
+.custom-modal-overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(17, 24, 39, 0.7);
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.custom-modal-box {
+    background: #ffffff;
+    padding: 35px 30px;
+    border-radius: 20px;
+    max-width: 400px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.25);
+    animation: slideUp 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(40px) scale(0.95); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.modal-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.modal-title {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #111827;
+    margin-bottom: 10px;
+}
+
+.modal-text {
+    font-size: 1rem;
+    color: #4b5563;
+    margin-bottom: 25px;
+    line-height: 1.5;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.btn-modal {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-modal-primary {
+    background: #f97316;
+    color: #ffffff;
+}
+
+.btn-modal-primary:hover {
+    background: #ea580c;
+    transform: translateY(-2px);
+}
+
+.btn-modal-secondary {
+    background: #e5e7eb;
+    color: #374151;
+}
+
+.btn-modal-secondary:hover {
+    background: #d1d5db;
+    transform: translateY(-2px);
+}
+
+.btn-modal-danger {
+    background: #ef4444;
+    color: #ffffff;
+}
+
+.btn-modal-danger:hover {
+    background: #dc2626;
+    transform: translateY(-2px);
+}
