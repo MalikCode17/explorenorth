@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Reservasi Wisata - ExploreNorth</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="container navbar">
+            <div class="logo">
+                <a href="index.html" class="link-logo">
+                    <h1>ExploreNorth</h1>
+                </a>
+            </div>
+
+            <input type="checkbox" id="navToggle" class="nav-toggle">
+            <label for="navToggle" class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="booking.html" class="active">Booking</a></li>
+                    <li><a href="riwayat.html">Riwayat</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Menggunakan class container agar lebar sama dengan konten index.html -->
+        <section class="container form-section" style="padding-top: 120px; padding-bottom: 60px;">
+            <h2 class="section-title">Form Reservasi Wisata</h2>
+
+            <div class="form-wrapper">
+                <!-- ID bookingForm akan digunakan oleh JavaScript di tahap selanjutnya -->
+                <form id="bookingForm">
+
+                    <div class="form-group">
+                        <label for="namaLengkap">Nama Lengkap <span style="color:red">*</span></label>
+                        <input type="text" id="namaLengkap" name="namaLengkap" placeholder="Contoh: Malikul Sholeh Rangkuti"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="nomorHp">Nomor HP <span style="color:red">*</span></label>
+                        <input type="tel" id="nomorHp" name="nomorHp" placeholder="Contoh: 081234567890" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="destinasi">Destinasi Wisata <span style="color:red">*</span></label>
+                        <select id="destinasi" name="destinasi" required>
+                            <option value="" disabled selected>-- Pilih Destinasi --</option>
+                            <option value="Danau Toba">Danau Toba</option>
+                            <option value="Berastagi">Berastagi</option>
+                            <option value="Pulau Nias">Pulau Nias</option>
+                            <option value="Kota Medan">Kota Medan</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="paketWisata">Jenis Paket Wisata <span style="color:red">*</span></label>
+                        <select id="paketWisata" name="paketWisata" required>
+                            <option value="" disabled selected>-- Pilih Paket --</option>
+                            <option value="Reguler">Reguler</option>
+                            <option value="Premium">Premium</option>
+                            <option value="VIP">VIP</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="tanggal">Tanggal Keberangkatan <span style="color:red">*</span></label>
+                        <input type="date" id="tanggal" name="tanggal" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="jumlahPeserta">Jumlah Peserta <span style="color:red">*</span></label>
+                        <input type="number" id="jumlahPeserta" name="jumlahPeserta" min="1"
+                            placeholder="Minimal 1 orang" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="catatan">Catatan</label>
+                        <textarea id="catatan" name="catatan" rows="4"
+                            placeholder="Tuliskan catatan tambahan (Opsional)"></textarea>
+                    </div>
+
+                    <!-- Menggunakan class btn-primary dari style lama agar konsisten -->
+                    <button type="submit" class="btn-primary btn-submit">Pesan Sekarang</button>
+
+                </form>
+            </div>
+        </section>
+
+        <div class="footer-ornament">
+            <img src="/images/ornamen-footer.jpg" alt="Ornamen Footer Pariwisata">
+        </div>
+    </main>
+
+    <footer id="kontak">
+        <div class="container">
+            <div class="social-icons">
+                <a href="https://github.com/MalikCode17" class="social-circle">gh</a>
+                <a href="https://www.facebook.com/share/p/1Cgxmm9cjK/" class="social-circle">f</a>
+                <a href="https://www.instagram.com/malikulsholehrangkuti?igsh=ZzN4NDJhMnQ5aTRo"
+                    class="social-circle">ig</a>
+            </div>
+            <p class="footer-text">Contact:<br>+62 832 7265 5777<br>malik@sumatera.com</p><br>
+            <p class="footer-text">&copy; 2026 Pariwisata Sumatera Utara.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

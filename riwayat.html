@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Riwayat Reservasi Wisata - ExploreNorth</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="container navbar">
+            <div class="logo">
+                <a href="index.html" class="link-logo">
+                    <h1>ExploreNorth</h1>
+                </a>
+            </div>
+
+            <input type="checkbox" id="navToggle" class="nav-toggle">
+            <label for="navToggle" class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="booking.html">Booking</a></li>
+                    <li><a href="riwayat.html" class="active">Riwayat</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="container table-section" style="padding-top: 120px; padding-bottom: 60px; min-height: 65vh;">
+            <h2 class="section-title">Riwayat Reservasi</h2>
+
+            <!-- Wrapper agar tabel bisa di-scroll secara horizontal jika layar kecil (responsif) -->
+            <div class="table-wrapper">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Nama</th>
+                            <th>Nomor HP</th>
+                            <th>Destinasi</th>
+                            <th>Paket</th>
+                            <th>Tanggal</th>
+                            <th>Jumlah Peserta</th>
+                            <th>Catatan</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody id="riwayatTableBody">
+                        <!-- Data akan ditampilkan di sini menggunakan JavaScript -->
+                        <tr id="emptyRowMessage">
+                            <td colspan="9" style="text-align: center; padding: 20px;">Belum ada data reservasi.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        <div class="footer-ornament">
+            <img src="/images/ornamen-footer.jpg" alt="Ornamen Footer Pariwisata">
+        </div>
+    </main>
+
+    <footer id="kontak">
+        <div class="container">
+            <div class="social-icons">
+                <a href="https://github.com/MalikCode17" class="social-circle">gh</a>
+                <a href="https://www.facebook.com/share/p/1Cgxmm9cjK/" class="social-circle">f</a>
+                <a href="https://www.instagram.com/malikulsholehrangkuti?igsh=ZzN4NDJhMnQ5aTRo"
+                    class="social-circle">ig</a>
+            </div>
+            <p class="footer-text">Contact:<br>+62 832 7265 5777<br>malik@sumatera.com</p><br>
+            <p class="footer-text">&copy; 2026 Pariwisata Sumatera Utara.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
